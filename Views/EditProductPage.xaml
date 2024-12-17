@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingList.Views.EditProductPage"
+             Title="Edytuj produkt"
+             Style="{StaticResource DefaultPageStyle}">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Edytuj produkt" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="Black" CornerRadius="10" Padding="10">
+                <Entry x:Name="ProductNameEntry" Placeholder="Nazwa produktu" Text="{Binding Name}" FontSize="Medium" />
+            </Frame>
+
+            <Frame BackgroundColor="Black" CornerRadius="10" Padding="10">
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Button Text="-" WidthRequest="50" Clicked="DecreaseQuantity_Clicked" BackgroundColor="Red" TextColor="White" />
+                    <Label Text="{Binding Quantity}" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+                    <Button Text="+" WidthRequest="50" Clicked="IncreaseQuantity_Clicked" BackgroundColor="Green" TextColor="White" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="Black" CornerRadius="10" Padding="10">
+                <Picker x:Name="UnitPicker" Title="Jednostka" SelectedItem="{Binding Unit}" FontSize="Medium" />
+            </Frame>
+
+            <Frame BackgroundColor="Black" CornerRadius="10" Padding="10">
+                <Picker x:Name="StorePicker" Title="Sklep" SelectedItem="{Binding Store}" FontSize="Medium" />
+            </Frame>
+
+            <Frame BackgroundColor="Black" CornerRadius="10" Padding="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Opcjonalne:" VerticalOptions="Center" FontSize="Medium" />
+                    <Switch IsToggled="{Binding IsOptional}" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Button Text="Zapisz" Clicked="SaveButton_Clicked" BackgroundColor="Green" TextColor="White" FontAttributes="Bold" />
+            <Button Text="Usuń" BackgroundColor="Red" TextColor="White" Clicked="DeleteButton_Clicked" FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

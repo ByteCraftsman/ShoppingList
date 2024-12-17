@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingList.Controls.ColorPickerControl">
+    <ContentView.Content>
+        <Grid Padding="20, 10, 0, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Button BackgroundColor="Red" Grid.Row="0" Grid.Column="0" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Green" Grid.Row="0" Grid.Column="1" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Blue" Grid.Row="0" Grid.Column="2" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Yellow" Grid.Row="0" Grid.Column="3" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Purple" Grid.Row="0" Grid.Column="4" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="0" Grid.Column="5" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Cyan" Grid.Row="0" Grid.Column="6" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Magenta" Grid.Row="0" Grid.Column="7" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+
+            <Button BackgroundColor="LightGray" Grid.Row="1" Grid.Column="0" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Pink" Grid.Row="1" Grid.Column="1" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="LightGreen" Grid.Row="1" Grid.Column="2" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="LightBlue" Grid.Row="1" Grid.Column="3" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Olive" Grid.Row="1" Grid.Column="4" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Teal" Grid.Row="1" Grid.Column="5" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Coral" Grid.Row="1" Grid.Column="6" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+            <Button BackgroundColor="Navy" Grid.Row="1" Grid.Column="7" HeightRequest="30" WidthRequest="30" Clicked="OnColorButtonClicked" Margin="5"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

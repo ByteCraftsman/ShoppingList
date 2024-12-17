@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ShoppingList.Controls"
+             x:Class="ShoppingList.Views.CategoryPage"
+             Title="Dodaj kategorię"
+             Style="{StaticResource DefaultPageStyle}">
+    <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="10" Spacing="15">
+            <StackLayout Orientation="Vertical" Padding="20, 10, 0, 10">
+                <Label Text="Podaj nazwę kategorii:"
+                   FontSize="Medium"
+                   VerticalOptions="Start"
+                   TextColor="White" />
+
+                <Entry x:Name="TextEntry"
+                    Text="{Binding Name}"
+                    Placeholder="Nazwa kategorii (domyślnie: licznik)"
+                    HorizontalOptions="Start"
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    Margin="0,20,0,0" />
+            </StackLayout>
+
+            <Label Text="Wybierz kolor kategorii:"
+               FontSize="Medium"
+               VerticalOptions="Start"
+               TextColor="White"
+               Padding="20, 10, 0, 10"/>
+
+            <controls:ColorPickerControl SelectedColor="{Binding ColorHex}" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="20">
+                <Button Text="Zapisz" Clicked="SaveButton_Clicked" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Usuń" Clicked="DeleteButton_Clicked" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

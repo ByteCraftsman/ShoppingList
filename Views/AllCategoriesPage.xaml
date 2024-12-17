@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingList.Views.AllCategoriesPage"
+             Title="Kategorie"
+             Style="{StaticResource DefaultPageStyle}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Dodaj kategorię" Clicked="Add_Clicked" IconImageSource="plus_icon.png"/>
+        <ToolbarItem Text="Predefiniowane" Clicked="AddPredefinedCategories_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout Padding="20">
+        <CollectionView x:Name="categoriesCollection" ItemsSource="{Binding Categories}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10" BackgroundColor="{Binding ColorHex}" Padding="15">
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Name}" FontSize="20" TextColor="White" VerticalOptions="Center" />
+
+                            <ImageButton Source="edit_icon.png" 
+                                         Grid.Column="1" 
+                                         BackgroundColor="Transparent" 
+                                         Clicked="EditButton_Clicked" 
+                                         WidthRequest="40" 
+                                         HeightRequest="40" />
+
+                            <ImageButton Source="trash_icon.png" 
+                                         Grid.Column="2" 
+                                         BackgroundColor="Transparent" 
+                                         Clicked="DeleteButton_Clicked" 
+                                         WidthRequest="40" 
+                                         HeightRequest="40" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

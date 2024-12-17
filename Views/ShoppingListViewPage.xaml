@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ShoppingList.Controls"
+             x:Class="ShoppingList.Views.ShoppingListViewPage"
+             Title="Lista do sklepu"
+             Style="{StaticResource DefaultPageStyle}">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Twoja lista do sklepu" 
+                   FontSize="Large" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,20"/>
+
+            <Button Text="Oznacz jako kupione" 
+                    IsEnabled="{Binding ShoppingListItems.Count}" 
+                    Clicked="MarkSelectedAsPurchased_Clicked" />
+
+            <Picker x:Name="StorePicker" Title="Wybierz sklep" SelectedIndexChanged="StorePicker_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Wszystkie</x:String>
+                        <x:String>Biedronka</x:String>
+                        <x:String>Selgros</x:String>
+                        <x:String>Lidl</x:String>
+                        <x:String>Auchan</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <CollectionView ItemsSource="{Binding ShoppingListItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:ProductControl />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

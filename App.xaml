@@ -1,0 +1,29 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ShoppingList"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ShoppingList.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+
+            <Color x:Key="PrimaryTextColor">#2196F3</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style x:Key="DefaultPageStyle" TargetType="Shell">
+                <Setter Property="Shell.BackgroundColor" Value="#1F1F1F" />
+                <Setter Property="Shell.TitleColor" Value="#6985FF" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
